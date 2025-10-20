@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng 20/10 - Gửi Mẹ Định</title>
+    <!-- Tải Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Thiết lập font Inter (hoặc một font chữ mềm mại) */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Thay đổi nền thành gradient hồng nhạt */
+            background: linear-gradient(135deg, #fce7f3 0%, #ffe4e6 100%); 
+            overflow: hidden; /* Quan trọng để confetti không gây cuộn ngang */
+        }
+        .heart-icon {
+            display: inline-block;
+            animation: pulse 2s infinite;
+            filter: drop-shadow(0 0 5px #f472b6); /* Thêm bóng cho trái tim */
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); } /* Tăng độ nảy */
+            100% { transform: scale(1); }
+        }
+
+        /* Hiệu ứng Confetti/Sparkle nền (Dùng pseudo-element) */
+        .celebration-bg::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            /* Tạo họa tiết lặp lại (dạng chấm nhỏ màu hồng nhạt) */
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Ccircle fill='%23fbcfe8' cx='5' cy='5' r='1.5'/%3E%3C/svg%3E") repeat;
+            opacity: 0.5;
+            animation: sparkle-drift 15s linear infinite;
+        }
+        
+        @keyframes sparkle-drift {
+            0% { background-position: 0 0; }
+            100% { background-position: 1000px 1000px; } /* Di chuyển hiệu ứng lấp lánh */
+        }
+        
+        /* Hiệu ứng lắc lư cho số 20/10 */
+        @keyframes sway {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-1.5deg); }
+            75% { transform: rotate(1.5deg); }
+        }
+        .sway-text {
+            animation: sway 5s ease-in-out infinite;
+            filter: drop-shadow(0 2px 5px rgba(251, 113, 133, 0.5)); /* Bóng mờ cho chữ */
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 celebration-bg">
+
+    <!-- Khung thiệp chính -->
+    <div class="bg-white shadow-2xl rounded-3xl p-6 md:p-10 max-w-lg w-full transform transition duration-500 hover:scale-[1.03] border-4 border-rose-300 shadow-rose-400/50 relative z-10">
+        
+        <!-- Header và Chủ đề -->
+        <header class="text-center mb-6">
+            <div class="text-5xl font-extrabold text-rose-600 mb-2 leading-tight sway-text">
+                20 <span class="text-rose-400">/</span> 10
+            </div>
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-800">
+                Chúc Mừng Ngày Phụ nữ Việt Nam
+            </h1>
+        </header>
+
+        <!-- Lời đề tặng cá nhân hóa -->
+        <div class="text-center mb-6 border-b pb-4 border-rose-100">
+            <p class="text-xl md:text-2xl font-semibold text-rose-500 italic">
+                Gửi người Phụ nữ Tuyệt vời nhất: Mẹ <span class="font-black text-rose-700">Định</span>
+            </p>
+        </div>
+        
+        <!-- Nội dung lời chúc -->
+        <div id="greeting-text-container" class="text-lg text-gray-700 leading-relaxed space-y-4 p-4 border border-rose-200 rounded-xl bg-rose-50">
+            <p>
+                Mẹ Định kính yêu của con,
+            </p>
+            <p>
+                Nhân ngày 20/10, con xin gửi đến Mẹ lời chúc tốt đẹp nhất. Cảm ơn Mẹ đã luôn là người phụ nữ kiên cường, là chỗ dựa vững chắc và là nguồn cảm hứng vô tận cho cả gia đình mình. Mỗi món ăn Mẹ nấu, mỗi lời động viên Mẹ dành cho con đều là báu vật.
+            </p>
+            <p class="text-rose-600 font-medium italic">
+                Thời gian có thể trôi qua, nhưng tình yêu và sự hy sinh của Mẹ sẽ mãi mãi là ánh dương sưởi ấm cuộc đời con. Chúc Mẹ luôn khỏe mạnh, vui vẻ, và nở nụ cười thật tươi mỗi ngày!
+            </p>
+        </div>
+        
+        <!-- Icon trái tim lấp lánh -->
+        <div class="text-center pt-4">
+            <svg class="heart-icon w-12 h-12 inline-block text-rose-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+            </svg>
+        </div>
+        
+        <!-- Chữ ký và lời kết -->
+        <footer class="mt-8 text-right transition-all duration-300 hover:tracking-wider">
+            <p class="text-gray-600 italic">
+                Với tất cả tình yêu thương,
+            </p>
+            <p class="text-xl font-bold text-rose-800 mt-1">
+                Con yêu của Mẹ.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
